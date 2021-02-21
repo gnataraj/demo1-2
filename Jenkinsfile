@@ -9,6 +9,12 @@ pipeline {
       }
     }
 
+    stage('Approve for deployment') {
+      steps {
+        input(message: 'Approve Please', id: 'approveMessage', submitter: 'gnataraj', ok: 'Approved')
+      }
+    }
+
   }
   environment {
     DEMO = '1'
